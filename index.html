@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's in people's mind</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image: url('background.png');">
+    <nav>
+        <img src="accenture-logo.jpg" class="logo"> 
+    </nav>
+    <div class="container">
+        <h1>What's in people's mind </h1>
+        <ul></ul>
+    </div>
+
+    <div  class="terms">
+      <center><p>copyright &copy; Susmita Gupta </p></center>  
+    </div>
+    
+    
+      
+
+    <script>
+ fetch("https://sheetdb.io/api/v1/r00d6vdfvoyfb")
+       .then(res =>{return res.json();})
+       .then(data => {data.forEach(
+        user => {
+            const markup=`<li>${user.Message}</li>`;
+            document.querySelector('ul').insertAdjacentHTML('beforeend', markup);
+        }
+       );
+    })
+    .catch(error => console.log(error));
+
+    </script>
+</body>
+</html>
